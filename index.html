@@ -3,32 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Hub | Your Name</title>
+    <title>Professional Hub | Ultimate Edition</title>
+    
+    <!-- Google Font & Font Awesome untuk Logo Aplikasi Asli -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         :root {
-            --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            --bg-gradient: linear-gradient(135deg, #f1f5f9 0%, #cbd5e1 100%);
             --text-main: #0f172a;
             --text-muted: #64748b;
-            --card-bg: rgba(255, 255, 255, 0.8);
-            --card-border: rgba(255, 255, 255, 0.6);
+            --card-bg: rgba(255, 255, 255, 0.85);
+            --card-border: rgba(255, 255, 255, 0.7);
             --button-bg: #FFFFFF;
             --button-hover: #0f172a;
             --button-hover-text: #FFFFFF;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.02);
-            --shadow-md: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+            --shadow-md: 0 20px 40px -10px rgba(15, 23, 42, 0.08);
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-gradient: linear-gradient(135deg, #0b0f17 0%, #1e293b 100%);
+                --bg-gradient: linear-gradient(135deg, #090d16 0%, #1e293b 100%);
                 --text-main: #f8fafc;
                 --text-muted: #94a3b8;
-                --card-bg: rgba(15, 23, 42, 0.6);
-                --card-border: rgba(255, 255, 255, 0.04);
+                --card-bg: rgba(15, 23, 42, 0.75);
+                --card-border: rgba(255, 255, 255, 0.03);
                 --button-bg: #1e293b;
                 --button-hover: #ffffff;
                 --button-hover-text: #0f172a;
@@ -49,38 +52,39 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
         }
 
         .container {
             width: 100%;
-            max-width: 450px;
+            max-width: 460px;
             background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
             border: 1px solid var(--card-border);
             border-radius: 32px;
-            padding: 2.5rem 1.75rem;
+            padding: 2.5rem 1.5rem;
             box-shadow: var(--shadow-md);
         }
 
-        /* Profile Section */
+        /* Profile */
         .profile {
             text-align: center;
             margin-bottom: 2rem;
         }
 
         .avatar {
-            width: 90px;
-            height: 90px;
+            width: 96px;
+            height: 96px;
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 1rem;
             border: 4px solid var(--button-bg);
+            box-shadow: var(--shadow-sm);
         }
 
         .name {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             font-weight: 700;
             letter-spacing: -0.03em;
             margin-bottom: 0.25rem;
@@ -89,51 +93,75 @@
         .tagline {
             font-size: 0.9rem;
             color: var(--text-muted);
-            line-height: 1.4;
         }
 
-        /* Section Title (Sub-Heading) */
+        /* Section Titles */
         .section-title {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             color: var(--text-muted);
-            margin: 1.5rem 0 0.75rem 0;
+            margin: 1.75rem 0 0.75rem 0;
             font-weight: 700;
-            text-align: left;
-            padding-left: 4px;
+            padding-left: 6px;
+            border-left: 3px solid var(--text-main);
+            line-height: 1;
         }
 
-        /* Layout Wrappers */
+        /* Layouts */
         .links-stack {
             display: flex;
             flex-direction: column;
             gap: 0.75rem;
         }
 
-        /* Grid 2 Kolom untuk Medsos & Money */
-        .links-grid {
+        .links-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+        }
+
+        .links-grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 0.75rem;
         }
 
-        /* Button Style */
+        /* Buttons Base */
         .btn {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
             text-decoration: none;
             color: var(--text-main);
             background: var(--button-bg);
-            padding: 1rem;
-            border-radius: 16px;
-            font-weight: 500;
-            font-size: 0.95rem;
             border: 1px solid var(--card-border);
             box-shadow: var(--shadow-sm);
-            transition: all 0.2s ease;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Button Stack (List Panjang) */
+        .btn-stack {
+            padding: 1.1rem 1.5rem;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            justify-content: flex-start; /* Teks rata kiri agar rapi */
+            gap: 1rem;
+        }
+
+        /* Button Grid (Medsos Kotak) */
+        .btn-grid {
+            flex-direction: column;
+            padding: 1rem 0;
+            border-radius: 14px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            gap: 0.4rem;
+        }
+
+        .btn-grid i {
+            font-size: 1.3rem;
         }
 
         .btn:hover {
@@ -142,11 +170,10 @@
             transform: translateY(-2px);
         }
 
-        /* Highlight Portofolio (Utama) */
+        /* Featured Link Style */
         .featured {
             background: var(--text-main);
             color: var(--button-bg);
-            font-weight: 600;
         }
         .featured:hover {
             background: var(--text-main);
@@ -155,10 +182,11 @@
         }
 
         .footer {
-            margin-top: 2.5rem;
+            margin-top: 3rem;
             text-align: center;
             font-size: 0.75rem;
             color: var(--text-muted);
+            font-weight: 500;
         }
     </style>
 </head>
@@ -169,50 +197,88 @@
         <div class="profile">
             <img class="avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=256&q=80" alt="Avatar">
             <h1 class="name">Nama Kamu</h1>
-            <p class="tagline">Tech Enthusiast & Content Creator</p>
+            <p class="tagline">Creative Professional & Content Creator</p>
         </div>
 
-        <!-- SEKSI 1: KREDIBILITAS & KARYA -->
-        <h2 class="section-title">Professional Core</h2>
+        <!-- 1. UTAMA (PORTOFOLIO & CV) -->
+        <h2 class="section-title">Main Showcase</h2>
         <div class="links-stack">
-            <!-- Portofolio dibuat paling mencolok -->
-            <a href="https://portfolio-kamu.com" class="btn featured" target="_blank" rel="noopener">
-                💼 View My Portfolio
+            <a href="https://portfolio-kamu.com" class="btn btn-stack featured" target="_blank" rel="noopener">
+                <i class="fa-solid fa-briefcase"></i> View My Portfolio
             </a>
-            <a href="https://drive.google.com/...cv-kamu.pdf" class="btn" target="_blank" rel="noopener">
-                📄 Download CV / Resume
-            </a>
-            <a href="https://linkedin.com/in/username" class="btn" target="_blank" rel="noopener">
-                🤝 LinkedIn Profile
-            </a>
-            <a href="https://sertifikasi-kamu.com" class="btn" target="_blank" rel="noopener">
-                📜 Certifications & Badges
+            <a href="https://drive.google.com/..." class="btn btn-stack" target="_blank" rel="noopener">
+                <i class="fa-solid fa-file-pdf"></i> Download CV / Resume
             </a>
         </div>
 
-        <!-- SEKSI 2: HUBUNGI LANGSUNG -->
-        <h2 class="section-title">Get In Touch</h2>
+        <!-- 2. KONTAK & PROFESIONAL -->
+        <h2 class="section-title">Professional Contact</h2>
         <div class="links-stack">
-            <a href="mailto:emailkamu@gmail.com" class="btn" target="_blank" rel="noopener">
-                ✉️ emailkamu@gmail.com
+            <a href="https://linkedin.com/in/username" class="btn btn-stack" target="_blank" rel="noopener">
+                <i class="fa-brands fa-linkedin"></i> LinkedIn Profile
+            </a>
+            <a href="mailto:emailkamu@gmail.com" class="btn btn-stack" target="_blank" rel="noopener">
+                <i class="fa-solid fa-envelope"></i> emailkamu@gmail.com
+            </a>
+            <a href="https://wa.me/628xxxxxxxxxx" class="btn btn-stack" target="_blank" rel="noopener">
+                <i class="fa-brands fa-whatsapp"></i> Chat via WhatsApp
             </a>
         </div>
 
-        <!-- SEKSI 3: SOSIAL MEDIA & MONETISASI (GRID 2 KOLOM) -->
-        <h2 class="section-title">Socials & Support</h2>
-        <div class="links-grid">
-            <!-- Baris Medsos -->
-            <a href="https://instagram.com/username" class="btn" target="_blank" rel="noopener">📸 Instagram</a>
-            <a href="https://x.com/username" class="btn" target="_blank" rel="noopener">🐦 X / Twitter</a>
-            
-            <!-- Baris Money / Support -->
-            <a href="https://saweria.co/username" class="btn" target="_blank" rel="noopener">☕ Saweria</a>
-            <a href="https://gumroad.com/username" class="btn" target="_blank" rel="noopener">🛍️ Digital Store</a>
+        <!-- 3. MEDIA SOSIAL (GRID 3 KOLOM BIAR MUAT BANYAK) -->
+        <h2 class="section-title">Social Media Channels</h2>
+        <div class="links-grid-3">
+            <a href="https://instagram.com/username" class="btn btn-grid" target="_blank" rel="noopener">
+                <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            <a href="https://tiktok.com/@username" class="btn btn-grid" target="_blank" rel="noopener">
+                <i class="fa-brands fa-tiktok"></i> TikTok
+            </a>
+            <a href="https://facebook.com/username" class="btn btn-grid" target="_blank" rel="noopener">
+                <i class="fa-brands fa-facebook"></i> Facebook
+            </a>
+            <a href="https://x.com/username" class="btn btn-grid" target="_blank" rel="noopener">
+                <i class="fa-brands fa-x-twitter"></i> X / Twitter
+            </a>
+            <a href="https://t.me/username" class="btn btn-grid" target="_blank" rel="noopener">
+                <i class="fa-brands fa-telegram"></i> Telegram
+            </a>
+            <a href="https://discord.gg/invite" class="btn btn-grid" target="_blank" rel="noopener">
+                <i class="fa-brands fa-discord"></i> Discord
+            </a>
+        </div>
+        <!-- Reddit ditaruh full-width di bawah grid karena ganjil (total 7 medsos) -->
+        <div class="links-stack" style="margin-top: 0.6rem;">
+            <a href="https://reddit.com/user/username" class="btn btn-stack" style="padding: 0.8rem 1.5rem; border-radius: 14px; font-size: 0.85rem;" target="_blank" rel="noopener">
+                <i class="fa-brands fa-reddit"></i> Reddit Community
+            </a>
+        </div>
+
+        <!-- 4. TOKO ONLINE (DIPISAH) -->
+        <h2 class="section-title">Digital & Merch Store</h2>
+        <div class="links-grid-2">
+            <a href="https://gumroad.com/username" class="btn btn-stack btn-grid" style="flex-direction: row; font-size: 0.9rem; padding: 1rem;" target="_blank" rel="noopener">
+                <i class="fa-solid fa-shop"></i> Gumroad
+            </a>
+            <a href="https://shopee.co.id/username" class="btn btn-stack btn-grid" style="flex-direction: row; font-size: 0.9rem; padding: 1rem;" target="_blank" rel="noopener">
+                <i class="fa-solid fa-bag-shopping"></i> Shopee Store
+            </a>
+        </div>
+
+        <!-- 5. DONASI / SUPPORT (DIPISAH) -->
+        <h2 class="section-title">Support My Work</h2>
+        <div class="links-grid-2">
+            <a href="https://saweria.co/username" class="btn btn-stack btn-grid" style="flex-direction: row; font-size: 0.9rem; padding: 1rem;" target="_blank" rel="noopener">
+                <i class="fa-solid fa-heart"></i> Saweria
+            </a>
+            <a href="https://trakteer.id/username" class="btn btn-stack btn-grid" style="flex-direction: row; font-size: 0.9rem; padding: 1rem;" target="_blank" rel="noopener">
+                <i class="fa-solid fa-coffee"></i> Trakteer
+            </a>
         </div>
 
         <!-- FOOTER -->
         <div class="footer">
-            © 2026 Nama Kamu. Powered by Clean Code.
+            © 2026 Nama Kamu. All links verified.
         </div>
     </div>
 
